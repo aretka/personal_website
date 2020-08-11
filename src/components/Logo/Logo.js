@@ -1,6 +1,6 @@
 import React from 'react'
 
-import reactLogo from '../../../images/logo192.png'
+import reactLogo from '../../images/logo192.png'
 import classes from './Logo.module.css'
 
 const logo = () => (
