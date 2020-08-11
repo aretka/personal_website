@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Aux from '../../../hoc/Auxi/Auxi'
 import Backdrop from '../../UI/Backdrop/Backdrop'
 import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
@@ -12,7 +11,7 @@ const sideDrawer = ( props ) => {
         attatchedClasses = [classes.Open];
     }
     return (
-        <Aux>
+        <>
             <Backdrop show={props.open} clicked={props.closed}/>
             <div className={classes.SideDrawer + ' ' + attatchedClasses}>
                 <div className={classes.Logo}>
@@ -22,7 +21,7 @@ const sideDrawer = ( props ) => {
                     <NavigationItems clicked={props.closed}/>
                 </div>
             </div>
-        </Aux>
+        </>
     )
 }
 
