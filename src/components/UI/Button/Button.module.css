@@ -1,16 +1,17 @@
 .Button {
     display: inline-block;
     height: 40px;
-    width: 150px;
-    border: 2px solid white;
-    border-radius: 10%;
-    margin: 15px 15px 20px 20px;
+    width: 165px;
+    border: .5px solid white;
+    border-radius: 7px;
+    margin: 15px 20px 15px 20px;
     color: #09B1BA;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: .8em;
+    font-size: 0.9em;
     letter-spacing: 1.5px;
     overflow: hidden;
+    background-color: white;
   }
   
   .Button a {
@@ -27,6 +28,7 @@
   
   .Button a {
     position: relative;
+    box-sizing: border-box;
     transition: all .45s ease-Out;
   }
   
@@ -53,6 +55,11 @@
   
   .Button:hover a {
     color: white;
+  }
+
+  .Button a:active,
+  .Button a.active {
+    font-weight: 700;
   }
 
   @media (max-width: 700px) {

@@ -7,8 +7,9 @@ const button = ( props ) => (
     <button className={classes.Button} onClick={props.clicked}>
         <div className={classes.Circle}></div>
         <NavLink 
-            to={props.link}
-            exact={props.exact}>{props.children}</NavLink>
+            to={props.link} 
+            exact={props.exact}
+            activeClassName={classes.active}>{props.children}</NavLink>
     </button>
 ) 
 
