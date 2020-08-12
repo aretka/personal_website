@@ -1,7 +1,6 @@
 import React from 'react'
 
 import classes from './Introduction.module.css'
-import Logo from '../../../components/Logo/Logo'
 import profilePicture from '../../../images/profilePicture.jpg'
 
 const introduction = () => (
