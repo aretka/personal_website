@@ -1,0 +1,15 @@
+.Content {
+    width: 900px;
+    height: auto;
+    margin: 50px auto;
+    border-radius: 20px;
+    border: 1px solid #09B1BA;
+    box-shadow: 4px 4px 2px #aaaaaa;
+    background-color: white;
+}
+
+@media (max-width: 920px) {
+    .Content {
+        width: 85%;
+    }
+}

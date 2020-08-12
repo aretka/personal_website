@@ -1,0 +1,28 @@
+.Bio {
+    width: 80%;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.Bio p {
+    line-height: 1.5rem;
+}
+
+.Bio a{
+    text-decoration: none;
+    color: #0b888f;
+}
+.Bio a:hover {
+    text-decoration: underline;
+    color: #12c4ce;
+}
+.Bio h2 {
+    border-left: 2px solid #0b888f;
+    padding-left: 11px;
+}
+
+@media (max-width: 700px) {
+    .Bio {
+        width: 90%;
+    }
+}

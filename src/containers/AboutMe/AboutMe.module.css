@@ -1,0 +1,14 @@
+.AboutMe {
+    color: #0b888f;
+    font-family: Arial;
+}
+.Container {
+    height: 40px;
+    width: 100%;
+}
+.Line {
+    height: 40px;
+    border-bottom: 2px solid #0b888f;
+    width: 60%;
+    margin: 0 auto;
+}
