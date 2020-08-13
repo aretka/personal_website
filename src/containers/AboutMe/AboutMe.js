@@ -10,6 +10,7 @@ const aboutMe = () => (
     <div className={classes.AboutMe}>
         <Background>
             <ContentSection>
+                <h2>About me</h2>
                 <Introduction />
                 <div className={classes.Container}>
                     <div className={classes.Line}>

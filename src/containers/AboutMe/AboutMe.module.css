@@ -2,6 +2,11 @@
     color: #0b888f;
     font-family: Arial;
 }
+
+.AboutMe h2 {
+    margin-top: 30px;
+    font-size: 27px;
+}
 .Container {
     height: 45px;
     width: 100%;

@@ -9,7 +9,7 @@ const bio = () => (
         <h2 className={classes.Goals}>Future goals:</h2>
         <ul>
             <li>Gain experience working with <b>React</b></li>
-            <li>Improve knowledge how to fetch and send data to a server</li>
+            <li>Improve knowledge of how to fetch and send data to a server</li>
             <li>Learn more about <b>React Redux</b></li>
             <li>Gain experience working on a larger projects</li>
             <li>Create and accomplish personal project</li>
