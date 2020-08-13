@@ -3,11 +3,11 @@
     font-family: Arial;
 }
 .Container {
-    height: 40px;
+    height: 45px;
     width: 100%;
 }
 .Line {
-    height: 40px;
+    height: 45px;
     border-bottom: 2px solid #0b888f;
     width: 60%;
     margin: 0 auto;

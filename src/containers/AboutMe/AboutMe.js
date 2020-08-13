@@ -16,10 +16,6 @@ const aboutMe = () => (
                     </div>
                 </div>
                 <Bio />
-                <div className={classes.Container}>
-                    <div className={classes.Line}>
-                    </div>
-                </div>
             </ContentSection>
         </Background>
     </div>
