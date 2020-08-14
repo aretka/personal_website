@@ -1,0 +1,32 @@
+.Skill {
+    width: 230px;
+    height: 150px;
+    margin: 30px;
+    border: 1px solid #09B1BA;
+    background-image: linear-gradient(141deg, #9fb8ad11 0%, #1fc8db0e 51%, #2cb6e80e 75%);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgb(175, 175, 175);
+    overflow: hidden;
+}
+
+.SkillHeader {
+    width: 70%;
+    margin: 10px auto;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Logo {
+    height: 90%;
+}
+
+.SkillHeader h3 {
+    margin: 0;
+}
+.Descripion {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
