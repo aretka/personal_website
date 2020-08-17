@@ -1,0 +1,59 @@
+.Button {
+    outline: none;
+    background-color: transparent;
+    color: #0b888f;
+    font-size: 17px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #09B1BA;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.Button:hover {
+    background-color: #09B1BA;
+    color: white;
+    animation: enable 0.4s linear;
+}
+
+.Button:active {
+    transform: scale(0.9);
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Danger {
+    border: none;
+    color: red;
+}
+
+.Success {
+    border: none;
+    color: limegreen;
+}
+
+.Success:hover {
+    color: limegreen;
+    animation: none;
+    background-color: transparent;
+}
+
+.Danger:hover {
+    background-color: transparent;
+    color: red;
+    animation: none;
+}
+
+
+
