@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../../UI/Button/Button'
+import Button from '../../UI/NavButton/NavButton'
 import classes from './NavigationItems.module.css'
 
 const navigationItems = ( props ) => (
