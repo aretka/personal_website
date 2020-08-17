@@ -1,0 +1,25 @@
+.Container {
+    width: 100%;
+    color: #0b888f;
+    font-family: Arial;
+}
+
+.Container h2 {
+    font-size: 27px;
+    margin-top: 30px;
+}
+
+.Skills {
+    margin: 0 auto;
+    max-width: 700px;
+    min-height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Button {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
