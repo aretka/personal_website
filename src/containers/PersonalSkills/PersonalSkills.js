@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
 import classes from './PersonalSkills.module.css'
 import Background from '../../components/UI/Background/Background'
@@ -7,45 +8,66 @@ import Skill from '../../components/Skill/Skill'
 import ModalButton from '../../components/UI/ModalButton/ModalButton'
 import Modal from '../../components/UI/Modal/Modal'
 import AddSkillArea from '../../components/Skill/AddSkillArea/AddSkillArea'
+import axios from '../../axios-skills'
 
 class PersonalSkills extends Component {
     state = {
         skills: [
-            {
-                id: 1,
-                name: 'React',
-                description: 'Some info about this skill. Experience, projects developed by this language.'
-            },
-            {
-                id: 2,
-                name: 'CSS',
-                description: 'Some info about this skill. Experience, projects developed by this language.'
-            },
-            {
-                id: 3,
-                name: 'Javascript',
-                description: 'Some info about this skill. Experience, projects developed by this language.'
-            },
-            {
-                id: 4,
-                name: 'HTML',
-                description: 'Some info about this skill. Experience, projects developed by this language.'
-            },
-            {
-                id: 5,
-                name: 'C++',
-                description: 'Some info about this skill. Experience, projects developed by this language.'
-            }
+            // {
+            //     id: 1,
+            //     name: 'React',
+            //     description: 'Some info about this skill. Experience, projects developed by this language.'
+            // },
+            // {
+            //     id: 2,
+            //     name: 'CSS',
+            //     description: 'Some info about this skill. Experience, projects developed by this language.'
+            // },
+            // {
+            //     id: 3,
+            //     name: 'Javascript',
+            //     description: 'Some info about this skill. Experience, projects developed by this language.'
+            // },
+            // {
+            //     id: 4,
+            //     name: 'HTML',
+            //     description: 'Some info about this skill. Experience, projects developed by this language.'
+            // },
+            // {
+            //     id: 5,
+            //     name: 'C++',
+            //     description: 'Some info about this skill. Experience, projects developed by this language.'
+            // }
         ],
         addingSkill: false
     }
     
     onAddSkill = () => {
+        this.props.history.replace( '/personal_skills/add_skill' )
         this.setState({ addingSkill: true })
     }
 
     onCancelAddingSkill = () => {
+        this.props.history.replace('/personal_skills');
         this.setState({ addingSkill: false })
+    }
+
+    componentWillMount() {
+        axios.get( '/skills.json' )
+            .then(res => {
+                console.log(res)
+                const fetchedSkills = [];
+                for (let key in res.data) {
+                    fetchedSkills.push({
+                        ...res.data[key],
+                        id: key
+                    })
+                }
+                this.setState({skills: fetchedSkills})
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     render () {
@@ -63,9 +85,14 @@ class PersonalSkills extends Component {
         )
         return (
             <>
-                <Modal show={this.state.addingSkill} modalClosed={this.onCancelAddingSkill}>
-                    <AddSkillArea onCancelAddingSkill={this.onCancelAddingSkill}/>
-                </Modal>
+                <Route 
+                    path={this.props.match.path + '/add_skill'}
+                    render={(props) => (
+                        <Modal show={this.state.addingSkill} >
+                            <AddSkillArea onCancelAddingSkill={this.onCancelAddingSkill} {...props}/>
+                        </Modal>
+                        )} 
+                />
                 <Background>
                     <ContentSection>
                         <div className={classes.Container}>

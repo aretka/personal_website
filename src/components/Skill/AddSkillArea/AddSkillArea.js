@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import classes from './AddSkillArea.module.css'
 import ModalButton from '../../UI/ModalButton/ModalButton'
+import axios from '../../../axios-skills'
 
 class AddSkillArea extends Component {
     state = {
@@ -24,6 +25,23 @@ class AddSkillArea extends Component {
             }
         },
         formIsValid: false
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        const skillData = {};
+        for (let skillElement in this.state.skill) {
+            skillData[skillElement] = this.state.skill[skillElement].value;
+        }
+        
+        axios.post( '/skills.json', skillData)
+            .then( response => {
+                console.log(response);
+                this.props.history.push( '/personal_skills' );
+            })
+            .catch( error => {
+                console.log(error);
+            })
     }
 
     checkValidity(value, rules) {
@@ -59,7 +77,7 @@ class AddSkillArea extends Component {
         return (
             <>
                 <h3> Complete skill name and description </h3>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input 
                         className={classes.Input}
                         type='text'
@@ -72,10 +90,19 @@ class AddSkillArea extends Component {
                         placeholder='Skill description'
                         onChange={(event) => this.inputChangedHandler(event, 'description')}>
                     </input>
+                    <ModalButton 
+                        btnType="Danger" 
+                        type="reset" 
+                        clicked={this.props.onCancelAddingSkill}
+                        >Cancel
+                    </ModalButton>
+                    <ModalButton 
+                        btnType="Success" 
+                        type="submit"  
+                        disabled={!this.state.formIsValid}
+                        >Continue
+                    </ModalButton>
                 </form>
-                <p>{this.state.skill.name.value}</p>
-                <ModalButton btnType="Danger" clicked={this.props.onCancelAddingSkill}>Cancel</ModalButton>
-                <ModalButton btnType="Success">Continue</ModalButton>
             </>
         )
     }
