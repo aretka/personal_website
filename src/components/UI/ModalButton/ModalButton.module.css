@@ -21,6 +21,11 @@
     transform: scale(0.9);
 }
 
+.Button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
 @keyframes enable {
     0% {
         transform: scale(1);
