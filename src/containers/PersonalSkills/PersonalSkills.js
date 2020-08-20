@@ -14,7 +14,6 @@ import * as actionTypes from '../../store/actions'
 
 class PersonalSkills extends Component {
     state = {
-        skills: [],
         addingSkill: false
     }
     
@@ -42,6 +41,9 @@ class PersonalSkills extends Component {
             .catch(error => {
                 console.log(error);
             })
+    }
+    componentDidUpdate() {
+        console.log('componentDidMount', this.props.skls);
     }
 
     render () {

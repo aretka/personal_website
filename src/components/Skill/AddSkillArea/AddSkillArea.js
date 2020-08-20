@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import classes from './AddSkillArea.module.css'
 import ModalButton from '../../UI/ModalButton/ModalButton'
 import axios from '../../../axios-skills'
+import * as actionTypes from '../../../store/actions'
 
 class AddSkillArea extends Component {
     state = {
@@ -33,7 +35,7 @@ class AddSkillArea extends Component {
         for (let skillElement in this.state.skill) {
             skillData[skillElement] = this.state.skill[skillElement].value;
         }
-        
+        this.props.onAddedSkill(this.state.skill.name.value, this.state.skill.name.value, this.state.skill.description.value)
         axios.post( '/skills.json', skillData)
             .then( response => {
                 console.log(response);
@@ -108,4 +110,20 @@ class AddSkillArea extends Component {
     }
 }
 
-export default AddSkillArea;
+const mapStateToProps = state => {
+    return {
+        skls: state.skills
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddedSkill: (id, name, description) => dispatch({
+            type: actionTypes.ADD_SKILL,
+            id: id,
+            name: name,
+            description: description})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddSkillArea);
