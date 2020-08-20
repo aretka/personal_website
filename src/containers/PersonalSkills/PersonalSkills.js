@@ -42,9 +42,6 @@ class PersonalSkills extends Component {
                 console.log(error);
             })
     }
-    componentDidUpdate() {
-        console.log('componentDidMount', this.props.skls);
-    }
 
     render () {
         let skillsArray = (
