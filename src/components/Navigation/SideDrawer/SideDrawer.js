@@ -15,7 +15,7 @@ const sideDrawer = ( props ) => {
             <Backdrop show={props.open} clicked={props.closed}/>
             <div className={classes.SideDrawer + ' ' + attatchedClasses}>
                 <div className={classes.Logo}>
-                    <Logo />
+                    <Logo logo='React'/>
                 </div>
                 <div>
                     <NavigationItems clicked={props.closed}/>

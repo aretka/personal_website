@@ -7,7 +7,7 @@ const skill = ( props ) => (
     <div className={classes.Skill}>
         <div className={classes.SkillHeader}>
             <div className={classes.Logo}>
-                <Logo />
+                <Logo logo={props.name}/>
             </div>
             <div className={classes.SkillName}>
                 <h3>{props.name}</h3>
