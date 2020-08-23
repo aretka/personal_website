@@ -10,7 +10,7 @@ const introduction = () => (
             <h2>An information systems engineering student at Vilnius University, self-taught web developer</h2>
         </div>
         <div className={classes.Photo}>
-            <img src={profilePicture} alt="Profile picture"/>
+            <img src={profilePicture} alt="Profile"/>
         </div>
     </div>
 )
