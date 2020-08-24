@@ -7,6 +7,7 @@ import htmlLogo from '../../images/htmlLogo.jpg'
 import cppLogo from '../../images/c++Logo.png'
 import cSharpLogo from '../../images/cSharpLogo.png'
 import phytonLogo from '../../images/phytonLogo.png'
+import skillLogo from '../../images/skillLogo.png'
 import classes from './Logo.module.css'
 
 const logo = ( props ) => {
@@ -34,7 +35,7 @@ const logo = ( props ) => {
             Logo = <img src={phytonLogo} alt="Logo"></img>
             break;
         default:
-            Logo = <img src={reactLogo} alt="Logo"></img>
+            Logo = <img src={skillLogo} alt="Logo"></img>
     }
 
     return (
