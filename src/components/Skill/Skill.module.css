@@ -30,8 +30,9 @@
     margin: 0 auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .Skill {
-        margin: 9px;
+        width: 270px;
+        margin: 20px 15px;
     }
 }

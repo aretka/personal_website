@@ -86,12 +86,14 @@ class AddSkillArea extends Component {
                         placeholder='Skill name'
                         onChange={(event) => this.inputChangedHandler(event, 'name')}>
                     </input>
-                    <input 
+                    <textarea  
+                        cols="40"
+                        rows="3"
                         className={classes.Input}
                         type='text'
                         placeholder='Skill description'
                         onChange={(event) => this.inputChangedHandler(event, 'description')}>
-                    </input>
+                    </textarea>
                     <ModalButton 
                         btnType="Danger" 
                         type="reset" 

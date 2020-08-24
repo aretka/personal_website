@@ -3,4 +3,19 @@
     margin: 10px 10px 10px 0;
     box-sizing: border-box;
     width: 100%;
+    border: 1px solid #0b888f;
+    border-radius: 5px;
+    outline: none;
 } 
+
+h3 {
+    color: #0b888f;
+}
+
+.Input:focus {
+    border: 2px solid #0b888f;
+}
+
+textarea {
+    resize: none;
+}
