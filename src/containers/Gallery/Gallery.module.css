@@ -1,0 +1,6 @@
+.Slider {
+    display: flex;
+    justify-content: center;
+    margin-left: calc(50% - 200px);;
+    width: 400px;
+}

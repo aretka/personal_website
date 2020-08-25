@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-const gallery = () => (
-    <div>
-        This is gallery!!!
-    </div>
-)
+import cssLogo from '../../images/cssLogo.png'
+import reactLogo from '../../images/reactLogo.png'
+import classes from './Gallery.module.css'
 
-export default gallery;
+class Gallery extends Component {
+    render () {
+        return (
+            <div className={classes.Slider}>
+                <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay={true}>
+                    <div>
+                        <img src={cssLogo}></img>
+                    </div>
+                    <div>
+                        <img src={reactLogo}></img>
+                    </div>
+                </Carousel>
+            </div>
+        )
+    }
+}
+
+export default Gallery;
