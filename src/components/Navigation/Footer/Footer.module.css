@@ -1,0 +1,21 @@
+.Footer {
+    width: 100%;
+    height: 50px;
+    background: rgb(190, 190, 190);
+    display: flex;
+    justify-content: center;
+}
+
+.Img {
+    height: 100%;
+}
+
+.Img:hover {
+    opacity: 0.5;
+}
+
+.Logo {
+    margin: auto 5px;
+    height: 60%;
+    width: 50px;
+}
