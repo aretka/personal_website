@@ -31,15 +31,26 @@ class AddSkillArea extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const skillData = {};
+        const skillData = {}; 
         for (let skillElement in this.state.skill) {
             skillData[skillElement] = this.state.skill[skillElement].value;
         }
-        this.props.onAddedSkill(this.state.skill.name.value, this.state.skill.name.value, this.state.skill.description.value)
+        let skillID;
         axios.post( '/skills.json', skillData)
             .then( response => {
-                console.log(response);
                 this.props.history.push( '/personal_skills' );
+
+                //assign last added skill id to a skillID by fetching it from firebase
+                axios.get( '/skills.json' )
+                    .then(res => {
+                        for (let key in res.data) {
+                            skillID = key;
+                        }
+                        this.props.onAddedSkill(skillID, this.state.skill.name.value, this.state.skill.description.value)
+                    })
+                    .catch( error => {
+                        console.log(error)
+                    })
             })
             .catch( error => {
                 console.log(error);
