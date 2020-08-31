@@ -36,6 +36,11 @@ class PersonalSkills extends Component {
 
     onConfirmRemovingSkill = () => {
         this.props.onRemovedSkill();
+        console.log(this.props.removingSkillID);
+        axios.delete(['skills/', this.props.removingSkillID, '.json'].join(''))
+            .then( res => {
+                console.log(res)
+            })
         this.setState({ removingSkill: false })
     }
 
@@ -49,7 +54,6 @@ class PersonalSkills extends Component {
 
         axios.get( '/skills.json' )
             .then(res => {
-                console.log(res)
                 for (let key in res.data) {
                     this.props.onAddedSkill(key, res.data[key].name, res.data[key].description)
                 }
@@ -107,7 +111,8 @@ class PersonalSkills extends Component {
 const mapStateToProps = state => {
     return {
         skls: state.skills,
-        loadedSkills: state.loadedSkills
+        loadedSkills: state.loadedSkills,
+        removingSkillID: state.removingSkillID
     }
 }
 
