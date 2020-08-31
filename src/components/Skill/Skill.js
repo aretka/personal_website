@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import classes from './Skill.module.css'
 import Logo from '../Logo/Logo'
