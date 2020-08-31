@@ -9,16 +9,36 @@
     overflow: hidden;
 }
 
+.Container {
+    width: 100%;
+    height: 35px;
+
+}
+
 .SkillHeader {
+    float: left;
     width: 70%;
-    margin: 10px auto;
-    height: 25px;
+    padding: 10px 10px 0px 30px;
+    height: 100%;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.RemoveLogo {
+    float: left;
+    height: 100%;
+    width: 30%;
+    padding: 13px 15px 8px 45px;
+    box-sizing: border-box;
 }
 
 .Logo {
     height: 95%;
+}
+
+.Logo img {
+    height: 100%;
 }
 
 .SkillHeader h3 {
@@ -30,9 +50,19 @@
     margin: 0 auto;
 }
 
+.ButtonHover {
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.ButtonHover:hover {
+    transform: scale(1.2); 
+}
+
 @media (max-width: 900px) {
     .Skill {
         width: 270px;
         margin: 20px 15px;
     }
 }
+
