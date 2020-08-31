@@ -9,12 +9,14 @@ import Skill from '../../components/Skill/Skill'
 import ModalButton from '../../components/UI/ModalButton/ModalButton'
 import Modal from '../../components/UI/Modal/Modal'
 import AddSkillArea from '../../components/Skill/AddSkillArea/AddSkillArea'
+import RemoveSkillArea from '../../components/Skill/RemoveSkillArea/RemoveSkillArea'
 import axios from '../../axios-skills'
 import * as actionTypes from '../../store/actions'
 
 class PersonalSkills extends Component {
     state = {
-        addingSkill: false
+        addingSkill: false,
+        removingSkill: false
     }
     
     onAddSkill = () => {
@@ -25,6 +27,14 @@ class PersonalSkills extends Component {
     onCancelAddingSkill = () => {
         this.props.history.push('/personal_skills');
         this.setState({ addingSkill: false })
+    }
+
+    onRemoveSkill = () => {
+        this.setState({ removingSkill: true })
+    }
+
+    onCancelRemovingSkill = () => {
+        this.setState({ removingSkill: false })
     }
 
     componentDidMount() {
@@ -42,12 +52,16 @@ class PersonalSkills extends Component {
                 console.log(error);
             })
     }
+    componentDidUpdate () {
+        console.log(this.state.removingSkill)
+    }
 
     render () {
         let skillsArray = (
             <div className={classes.Skills}>
                 {this.props.skls.map(element => (
                     <Skill 
+                        clicked={this.onRemoveSkill}
                         key={element.id}
                         name={element.name}
                         description={element.description}
@@ -65,6 +79,9 @@ class PersonalSkills extends Component {
                         </Modal>
                         )} 
                 />
+                <Modal show={this.state.removingSkill} modalClosed={this.onCancelRemovingSkill}>
+                        <RemoveSkillArea onCancelRemovingSkill={this.onCancelRemovingSkill}/>
+                </Modal>
                 <Background>
                     <ContentSection>
                         <div className={classes.Container}>
