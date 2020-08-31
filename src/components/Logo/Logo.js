@@ -14,25 +14,25 @@ const logo = ( props ) => {
     let Logo = null;
     switch (props.logo) {
         case "CSS": 
-            Logo = <img src={cssLogo} alt="Logo"></img>
+            Logo = <img src={cssLogo} alt="CSS"></img>
             break;
         case "React":
-            Logo = <img src={reactLogo} alt="Logo"></img>
+            Logo = <img src={reactLogo} alt="React"></img>
             break;
         case "Javascript":
-            Logo = <img src={javascriptLogo} alt="Logo"></img>
+            Logo = <img src={javascriptLogo} alt="Javascript"></img>
             break;
         case 'HTML':
-            Logo = <img src={htmlLogo} alt="Logo"></img>
+            Logo = <img src={htmlLogo} alt="HTML"></img>
             break;
         case 'C++':
-            Logo = <img src={cppLogo} alt="Logo"></img>
+            Logo = <img src={cppLogo} alt="C++"></img>
             break;
         case 'C#':
-            Logo = <img src={cSharpLogo} alt="Logo"></img>
+            Logo = <img src={cSharpLogo} alt="C#"></img>
             break;
         case 'Phyton':
-            Logo = <img src={phytonLogo} alt="Logo"></img>
+            Logo = <img src={phytonLogo} alt="Phyton"></img>
             break;
         default:
             Logo = <img src={skillLogo} alt="Logo"></img>
