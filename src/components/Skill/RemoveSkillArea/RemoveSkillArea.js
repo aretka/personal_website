@@ -8,7 +8,7 @@ const removeSkill = ( props ) => {
         <div>
             <h3 className={classes.Heading}>Are you sure you want to delete this skill?</h3>            
             <ModalButton btnType='Danger' clicked={props.onCancelRemovingSkill}>No</ModalButton>
-            <ModalButton btnType='Success'>Yes</ModalButton>
+            <ModalButton btnType='Success' clicked={props.onConfirmRemovingSkill}>Yes</ModalButton>
         </div>
         )
 }

@@ -29,8 +29,14 @@ class PersonalSkills extends Component {
         this.setState({ addingSkill: false })
     }
 
-    onRemoveSkill = () => {
+    onRemoveSkill = (id) => {
+        this.props.onAddedRemovingSkillID(id);
         this.setState({ removingSkill: true })
+    }
+
+    onConfirmRemovingSkill = () => {
+        this.props.onRemovedSkill();
+        this.setState({ removingSkill: false })
     }
 
     onCancelRemovingSkill = () => {
@@ -52,16 +58,13 @@ class PersonalSkills extends Component {
                 console.log(error);
             })
     }
-    componentDidUpdate () {
-        console.log(this.state.removingSkill)
-    }
 
     render () {
         let skillsArray = (
             <div className={classes.Skills}>
                 {this.props.skls.map(element => (
                     <Skill 
-                        clicked={this.onRemoveSkill}
+                        clicked={() => this.onRemoveSkill(element.id)}
                         key={element.id}
                         name={element.name}
                         description={element.description}
@@ -80,7 +83,10 @@ class PersonalSkills extends Component {
                         )} 
                 />
                 <Modal show={this.state.removingSkill} modalClosed={this.onCancelRemovingSkill}>
-                        <RemoveSkillArea onCancelRemovingSkill={this.onCancelRemovingSkill}/>
+                        <RemoveSkillArea 
+                            onCancelRemovingSkill={this.onCancelRemovingSkill}
+                            onConfirmRemovingSkill={this.onConfirmRemovingSkill}
+                            />
                 </Modal>
                 <Background>
                     <ContentSection>
@@ -108,10 +114,17 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAddedSkill: (id, name, description) => dispatch({
-                type: actionTypes.ADD_SKILL,
-                id: id,
-                name: name,
-                description: description})
+            type: actionTypes.ADD_SKILL,
+            id: id,
+            name: name,
+            description: description}),
+        onAddedRemovingSkillID: (id) => dispatch({
+            type: actionTypes.ADD_REMOVING_SKILL_ID,
+            skillID: id
+        }),
+        onRemovedSkill: () => dispatch({
+            type: actionTypes.REMOVE_SKILL
+        })
     }
 }
 

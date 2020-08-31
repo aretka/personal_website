@@ -1,1 +1,3 @@
 export const ADD_SKILL = 'ADD_SKILL';
+export const ADD_REMOVING_SKILL_ID = 'ADD_REMOVING_SKILL_ID';
+export const REMOVE_SKILL = 'REMOVE_SKILL'
