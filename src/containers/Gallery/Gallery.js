@@ -12,10 +12,10 @@ class Gallery extends Component {
             <div className={classes.Slider}>
                 <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay={true}>
                     <div>
-                        <img src={cssLogo}></img>
+                        <img src={cssLogo} alt="pic"></img>
                     </div>
                     <div>
-                        <img src={reactLogo}></img>
+                        <img src={reactLogo} alt="pic"></img>
                     </div>
                 </Carousel>
             </div>
