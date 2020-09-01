@@ -4,10 +4,17 @@
 }
 
 .Slider {
-    padding-top: 40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    margin-left: calc(50% - 200px);;
-    width: 400px;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+}
+
+@media (min-width: 900px) {
+    .Slider {
+        padding-top: 40px;
+        margin-left: calc(50% - 450px);;
+    }
 }
