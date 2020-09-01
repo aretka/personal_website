@@ -7,7 +7,6 @@ const navigationItems = ( props ) => (
     <div className={classes.NavigationItems}>
         <Button clicked={props.clicked} link='/' exact>ABOUT ME</Button>
         <Button clicked={props.clicked} link='/personal_skills'>PERSONAL SKILLS</Button>
-        <Button clicked={props.clicked} link='/gallery'>GALLERY</Button>
     </div>
 )
 
