@@ -1,4 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This is my personal website 
+Personal website was created with react framework and firebase realtime database(for managing personal skills). It is fully responsive 
+
+### About me page
+This page consists of slider and main content part.
+* Slider switches photos in fixed time intervals and allow us to switch them as well by pressing arrow.
+* Main content is comprised of header, description and a photo.
+<img src="https://user-images.githubusercontent.com/57877668/151539712-6e493e77-68ad-4e1d-9916-b9711c2863b7.gif" width="600"/>
+
+### Personal skills page
+This is a page containing some personal skills and their description. </br>Functionality:
+* Personal skills are fetched from realtime database and displayed on the screen.
+* New skills can be added or removed.
+* Modal to add skill has validation: input fields cannot be empty.
+<img src="https://user-images.githubusercontent.com/57877668/151536548-7a7d2d42-ca13-4056-b5fd-2b08f9078c6c.gif" width="600"/>
+
+### Mobile size web
+Mobile sized app creates hamburger button in order to toggle header content on and off.</br>
+<img src="https://user-images.githubusercontent.com/57877668/151536049-87d0248e-639b-4065-9a43-cf04caebb5c8.gif" width="250"/>
+
+### Footer
+Footer part consists of 3 buttons linked to my socials:</br>
+* Facebook
+* Linkedin
+* Email
+<img src="https://user-images.githubusercontent.com/57877668/151539421-a65d9bbb-c3c7-45de-89aa-6e33b06c4f71.png" width="300"/>
 
 ## Available Scripts
 
